@@ -158,7 +158,7 @@ for (var index = 0; index < arrTag.length; index++) {
 /*
     -------------------- Truy xuất thẻ thông qua sector -----------------
     Truy xuất nhiều thẻ thì dùng querySelectorAll. Lưu ý: Khi truy xuất = queryAll thì kết quả trả về là 1 mảng các thẻ có trùng selector. Nếu không có thẻ nào chứa selector đó thì kết quả trả về là mảng rỗng [];
-    Truy xuất 1 thẻ dùng querySelector . Lưu ý: Nếu có nhiều selector trùng nhau thì chỉ trả về thẻ đầu tiên, nếu k có selector nào thì trả về undefine.
+    Truy xuất 1 thẻ dùng querySelector . Lưu ý: Nếu có nhiều selector trùng nhau thì chỉ trả về thẻ đầu tiên, nếu ko có selector nào thì trả về undefine.
 
 */
 var arrTagContent = document.querySelectorAll('.content');
