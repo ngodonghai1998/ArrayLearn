@@ -1,0 +1,10 @@
+Các lệnh trong github, sử dụng cho 01_Array/me:
+
+01 - git init
+02 - git config --global user.name "ngodonghai1998"
+03 - git config --global user.email "haiscar17@gmail.com"
+04 - git remote add origin https://github.com/ngodonghai1998/ArrayLearn
+05 - git add -A
+06 - git commit -m "first commit"
+07 - git push --set-upstream origin master
+08 - git pull

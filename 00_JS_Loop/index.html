@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array list</title>
+    <!--css bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container" style="margin-bottom:500px ;">
+        <div class="alert bg-dark text-white display-4">
+            Cho 1 mảng: <span id="mang-so">
+                [12, 19, 20, 17, 41, 38, 45]
+            </span>
+        </div>
+        <hr />
+        <h3>
+            Bài 1: Viết ứng dụng cho phép người dùng thêm 1 giá trị vào cuối mảng và thay đổi mảng trên
+        </h3>
+        <div class="form-group">
+            <p>Nhập vào 1 giá trị</p>
+            <input class="form-control w-50" id="num" />
+            <button class="btn btn-success mt-2" id="btn-them-gia-tri">Thêm giá trị</button>
+        </div>
+        <hr />
+        <h3>Bài tập 2: Viết chương trình cho người dùng nhập vào vị trí -> in giá trị đó ra giao diện</h3>
+        <div class="form-group">
+            <p>Nhập vào vị trí</p>
+            <input id="vi-tri" class="form-control w-50" />
+            <button class="btn btn-success" id="btn-in-gia-tri">In giá trị</button>
+        </div>
+        <div id="ket-qua-bai-2" class="alert bg-dark mt-2 text-white">
+
+        </div>
+        <hr />
+        <h3>Bài tập 3: Cho phép người dùng nhập vào 1 số, nếu số đó có trong mảng thì in ra vị trí, ngược lại in ra không tìm thấy</h3>
+        <div class="form-group">
+            <p>Nhập vào giá trị</p>
+            <input class="form-control my-2" id="nhap-gia-tri" />
+            <button class="btn btn-success my-2" id="btn-in-vi-tri">In vị trí</button>
+        </div>
+        <div id="ket-qua-bai-3" class="alert my-2 bg-dark text-white">
+
+        </div>
+        <hr />
+        <h3>
+            Bài tập 4: Viết chương trình cho phép người dùng nhập vào giá trị cần xoá trong array, nếu giá trị đó không có thì in ra không tìm thấy !
+        </h3>
+        <div class="form-group">
+            <p>Nhập vào giá trị cần xoá</p>
+            <input id="gia-tri-xoa" class="form-control w-50 d-inline" />
+            <button id="btn-xoa-phan-tu" class="btn btn-danger">Xoá phần tử</button>
+        </div>
+        <div class="alert alert-danger my-2" id="ket-qua-b4">
+
+        </div>
+        <hr />
+        <h3>Truy xuất thẻ thông qua tag name</h3>
+        <section>1</section>
+        <section>2</section>
+        <section>3</section>
+        <h3>Truy xuất thẻ thông qua class name</h3>
+        <div class="content ">div 1</div>
+        <article class="content" >div 2</article>
+        <main class="content">div 3</main>
+        <hr />
+        <h3>Truy xuất thẻ thông qua selector</h3>
+        <div class="description">
+            <p id="text" class="text  text-1">doc 1</p>
+            <h3 class="text content">doc 2</h3>
+            <article class="text content">doc 3</article>
+        </div>
+        <hr />
+        <h3>Bài 4: Cho 1 mảng color ['red','green','blue'] yêu cầu dùng js để tạo ra kết quả tương ứng</h3>
+        <div>
+            <select class="form-control w-25">
+                <option value="red" style="color: red;">red</option>
+                <option value="red" style="color: green;">green</option>
+                <option value="blue" style="color: blue;">blue</option>
+            </select>
+        </div>
+        <div id="ket-qua-bai-4">
+    
+        </div>
+    </div>
+   
+
+
+
+    <style>
+        .content {
+            font-size : 30px;
+        }
+    </style>
+
+
+    <!--js bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!--js lib-->
+    <script src="/js/method.js"></script>
+    <!--js custom-->
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
