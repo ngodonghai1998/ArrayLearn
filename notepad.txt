@@ -6,5 +6,7 @@ Các lệnh trong github, sử dụng cho 01_Array/me:
 04 - git remote add origin https://github.com/ngodonghai1998/ArrayLearn
 05 - git add -A
 06 - git commit -m "first commit"
-07 - git push --set-upstream origin master
+07 - git push --set-upstream origin master/secondHand
 08 - git pull
+09 - git checkout -b secondHand
+10 - git checkout master/secondHand
