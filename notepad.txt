@@ -10,3 +10,11 @@ Các lệnh trong github, sử dụng cho 01_Array/me:
 08 - git pull
 09 - git checkout -b secondHand
 10 - git checkout master/secondHand
+
+
+Cách khai báo mảng: var tenBien = [];
+
+Các thao tác với mảng: C (create) R (read) U (update) D (delete) 
+
+//Create: Thêm dữ liệu vào mảng
+//tenMang.push(giaTri); Thêm 1 giá trị ở cuối mảng.
