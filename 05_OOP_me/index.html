@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Object Oriented Programming</title>
+    <title>Objected Oriented Programming</title>
 
     <!-- css boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -14,6 +14,78 @@
 
 </head>
 <body>
+    <!-- nav-a -->
+    <nav class="nav justify-content-start bg-dark text-white py-3">
+      <a class="nav-link active text-dark bg-white " href="/05_OOP_me/index.html" aria-current="page">Quản lý sinh viên</a>
+      <a class="nav-link text-white" href="/05_OOP_me/quan-ly-nhan-vien.html">Quản lý nhân viên</a>
+      <a class="nav-link disabled" href="#">Disabled link</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Quản lý sinh viên</h3>
+                <div class="form-group">
+                    <p>Mã sinh viên</p>
+                    <input class="form-control" id="maSinhVien"/>
+                </div>
+
+                <div class="form-group">
+                    <p>Tên sinh viên</p>
+                    <input class="form-control" id="tenSinhVien"/>
+                </div>
+
+                <div class="form-group">
+                    <p>Loại sinh viên</p>
+                    <select class="form-control" id="loaiSinhVien">
+                        <option>Nghèo</option>
+                        <option>Khổ</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <p>Điểm Toán</p>
+                    <input class="form-control" id="diemToan"/>
+                </div>
+
+                <div class="form-group">
+                    <p>Điểm Văn</p>
+                    <input class="form-control" id="diemVan"/>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-success my-2" id="btnHienThi">Hiển thị thông tin</button>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <h3>Thông tin sinh viên</h3>
+                <div class="alert alert-success my-2 mt-5">
+                    <p>Mã sinh viên:
+                        <span id="text-maSinhVien"></span>
+                    </p>
+                </div>
+
+                <div class="alert alert-success my-2">
+                    <p>Tên sinh viên:
+                        <span id="text-tenSinhVien"></span>
+                    </p>
+                </div>
+
+                <div class="alert alert-success my-2">
+                    <p>Loại sinh viên:
+                        <span id="text-loaiSinhVien"></span>
+                    </p>
+                </div>
+
+                <div class="alert alert-success my-2">
+                    <p>Điểm trung bình:
+                        <span id="text-diemTrungBinh"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     
 
     <!-- js boostrap -->
