@@ -20,6 +20,30 @@ $fw-bold:700;
 /*----------Background-----------*/
 $bg-c0-primary: #2a73dd;
 $bg-c1-primary: #f5f9fe;
+$bg-none: transparent;
+
+/*---------Mixin-----------*/
+@mixin text($fz:$fs-base, $fw:$fw-light, $c:$text-c0-dark) {
+    font-size: $fz;
+    font-weight: $fw;
+    color: $c;
+}
+
+@mixin button($fz, $fw, $c, $bg, $bd, $br, $p, $c-hover, $bg-hover) {
+    font-size: $fz;
+    font-weight: $fw;
+    color: $c;
+    background: $bg;
+    border: $bd;
+    border-radius: $br;
+    padding: $p;
+    cursor: pointer;
+    &:hover {
+        color: $c-hover;
+        background: $bg-hover;
+    }
+}
+
 
 
 *{
@@ -41,7 +65,8 @@ $bg-c1-primary: #f5f9fe;
 .header {
     background: $bg-c1-primary;
     -webkit-box-shadow: 1px 9px 5px 0px rgba(42,115,221,0.59); 
-box-shadow: 1px 9px 5px 0px rgba(42,115,221,0.59);
+    box-shadow: 1px 9px 5px 0px rgba(42,115,221,0.59);
+
     .container {
         padding: 15px;
         .d-flex {
@@ -100,14 +125,18 @@ box-shadow: 1px 9px 5px 0px rgba(42,115,221,0.59);
             align-items: center;
             .title {
                 h1 {
-                    font-size: $fs-6xl;
-                    font-weight: $fw-semibold;
-                    color: $text-c0-primary;
+                    // font-size: $fs-6xl;
+                    // font-weight: $fw-semibold;
+                    // color: $text-c0-primary;
+                    @include text($fs-6xl, $fw-semibold, $text-c0-primary);
+
                 }
                 h2 {
-                    font-size: $fs-3xl;
-                    font-weight: $fw-light;
-                    color: $text-c0-dark;
+                    // font-size: $fs-3xl;
+                    // font-weight: $fw-light;
+                    // color: $text-c0-dark;
+                    @include text();
+                    margin-bottom: 15px;
                 }
                 p {
                     font-size: $fs-base;
@@ -115,18 +144,26 @@ box-shadow: 1px 9px 5px 0px rgba(42,115,221,0.59);
                     color: $text-c0-dark;
                 }
                 .btn-info {
-
+                    // background: transparent;
+                    // padding: 13.5px 44px;
+                    // border: 2px solid #2a73dd;
+                    // border-radius: 8px;
+                    // font-size: 14px;
+                    // font-weight: 600;
+                    // color: #2a73dd;
+                    // transition: .5s;
+                    // cursor: pointer;
+                    @include button($fs-base, $fw-semibold, $text-c0-primary, $bg-none, 2px solid #2a73dd, 8px, 13.5px 44px, $text-c0-light, $bg-c0-primary);
                 }
                 .btn-shop {
 
                 }
             }
-            .thumbnail {
-                img {
-                    // width: 100%;
-                    height: 75%;
-                }
+            img {
+                // width: 100%;
+                height: 75%;
             }
+            
         }
     }
 }

@@ -1,5 +1,6 @@
 /* -------------Test-------------*/
 /*----------Background-----------*/
+/*---------Mixin-----------*/
 * {
   margin: 0px;
   padding: 0px;
@@ -77,15 +78,30 @@
   color: #2a73dd;
 }
 .carousel .container .d-flex .title h2 {
-  font-size: 30px;
+  font-size: 16px;
   font-weight: 300;
   color: #000;
+  margin-bottom: 15px;
 }
 .carousel .container .d-flex .title p {
   font-size: 16px;
   font-weight: 300;
   color: #000;
 }
-.carousel .container .d-flex .thumbnail img {
+.carousel .container .d-flex .title .btn-info {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a73dd;
+  background: transparent;
+  border: 2px solid #2a73dd;
+  border-radius: 8px;
+  padding: 13.5px 44px;
+  cursor: pointer;
+}
+.carousel .container .d-flex .title .btn-info:hover {
+  color: #fff;
+  background: #2a73dd;
+}
+.carousel .container .d-flex img {
   height: 75%;
 }
