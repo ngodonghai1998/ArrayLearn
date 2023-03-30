@@ -1,31 +1,22 @@
 //@import url(/scss/themes/default_themes.scss);
+// nhớ chú ý có dấu chấm '.' nếu ko thì scss không hiểu.
+// lên sass-lang.com để tra câu lệnh sass.
 @import './themes/default_themes';
-
-
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-.container{
-    max-width: 1280px;
-    margin: 0 auto;
-}
+@import './layout/components/components.scss';
+@import './base/base';
 
 
 
 //Phần mới: sử dụng nesting css
 
 .header {
-    background: $bg-c1-primary;
+    // background: $bg-c1-primary;
     -webkit-box-shadow: 1px 9px 5px 0px rgba(42,115,221,0.59); 
     box-shadow: 1px 9px 5px 0px rgba(42,115,221,0.59);
 
     .container {
         padding: 15px;
-        .d-flex {
+        .d-flex {   
             display: flex;
             justify-content: space-between;
             .logo {
@@ -123,3 +114,126 @@
         }
     }
 }
+
+//Khái niệm component, ví dụ đổi màu một cái thì những cái tương tự đổi màu theo. Component là những thành phần chung trong giao diện và có khả năng tái sử dụng.
+
+.products {
+    background: $bg-c1-primary;
+    .container {
+        .title {
+            text-align: center;
+            padding: 30px 0px;
+            //@include text($fs-3xl, $fw-semibold, $text-c0-dark);
+            @extend .text-title;
+        }
+
+        .list-item {
+            display: flex;
+            flex-wrap: wrap;
+
+            .col {
+                //Lý do dùng calc lấy 100% chia 3 mà vẫn có 6 sản phẩm như trong bài cùng nằm trên một hàng vì dùng flex. Flex sẽ chia các con đều trên cùng một hàng. Nên sẽ sử dụng flex wrap, khi đầy thì flex wrap sẽ tự động xuống dòng.
+                width: calc(100%/3);
+
+                @media screen and (max-width: 768px) {
+                    width: calc(100%/2);
+                }
+
+                @media screen and (max-width: 576px) {
+                    width: 100%;
+                }
+
+                @for $i from 0 to 6 {
+                    .item-#{$i + 1} {
+                        animation: fade-down 1s*($i + 1);
+                    }
+                } 
+
+                .card {
+                    margin: 1%;
+                    @extend .shadow;
+
+                    // animation: fade-down 0.5s;
+
+
+                    // background-color: blue;
+                    img {
+                        width: 100%;
+                    }
+                    .card-body {
+                        padding: 15px;  
+                        .name-price {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            .name {
+                                @extend .text-title;
+                                i {
+                                    @extend .text-dark, .text-base;
+                                }
+                            }
+                            p {
+                                @extend .text-title;
+                            }
+                        }
+                    }
+
+                    .rating-button {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        .rating {
+                            i {
+                                @extend .text-warning;
+                            }
+                        }
+                    }
+
+                    .btn-buy {
+                        @extend .button-primary;
+                        i {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
