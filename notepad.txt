@@ -1,3 +1,17 @@
+<!-- Công nghệ AJAX dùng để giao tiếp với và truy xuất dữ liệu từ BACKEND -->
+Một số phương thức AJAX thông dụng như:
+ - Phương thức GET là lấy dữ liệu
+ - Phương thức POST là thêm dữ liệu
+ - Phương thức PUT là cập nhật dữ liệu
+ - Phương thức DELETE là xóa dữ liệu
+
+<!-- js axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js" integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+
 <!-- Đổ bóng dùng box-shadow online -->
 https://html-css-js.com/css/generator/box-shadow/
 
