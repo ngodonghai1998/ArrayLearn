@@ -1,9 +1,53 @@
+
+
+
+
+//Khi làm việc với backend cần chú ý gì:
+  - 1/ url: Phải đúng chính xác 100% (và xem kỹ các url có tham số truyền vào hay không???) -> kiểm tra network
+  - 2/ method: Kiểm tra method có đúng format backend hay không?
+  - 3/ data: Định dạng dữ liệu (format dữ liệu) có đúng chính tả như backend yêu cầu hay không?
+
+  *Lưu ý: lỗi 500 (error in server)
+   + B1: Kiểm tra = post man hoặc swagger để xem dữ liệu backend có xử lý thành công hay không (nếu thành công là code frontend bị sai kiểm tra lại 1 2 3, nếu thất bại là do backend code có vấn đề);
+   + B2: Báo backend xử lý nếu có th 2 xảy ra.
+
+
+Sử dụng try-catch để bắt khối lệnh bị lỗi.
+
+
+Call API có 2 cách:
+ - promise: Khi các API không cần thiết phải chờ đợi nhau để thực thi.
+ - async await: Khi các API cần đợi kết quả từ API trước hoặc function chỉ có 1 promise để thực thi.
+
+
+<!-- Hàm axios: Hàm bất đồng bộ -->
+//Khi console log trong promise và 123 thì lúc nào 123 cũng xuất hiện trước do axios là hàm bất đồng bộ. Nghĩa là khi axios request đến server thì lúc đó code có thể chạy tiếp. Còn lúc request có thể bị chậm hay ko request được thì vẫn chạy tiếp code bên dưới.
+//Để đồng bộ các phần theo thứ tự, có thể sử dụng async rồi await.
+//Mặt lợi của async rồi await là nó sẽ chờ call api xong thì mới làm tiếp tục.
+//Nhưng nếu 2 axios không liên quan tới nhau thì không nên dùng await.
+
+
+<!-- Post man -->
+Tạo sử dụng Environment để thay thế cho đường link http.
+Ví dụ thay vì sử dụng: http://svcy.myclass.vn/api/SinhVienApi/LayDanhSachSinhVien
+
+Thì có thể tạo ra new environment. Định nghĩa http cho url và sau đó save lại.
+
+Trong phương thức GET thì sẽ sử dụng: {{url}}/api/SinhVienApi/LayDanhSachSinhVien
+
+
+
+<!-- Link test -->
+https://github.com/khloe1425/AirBnB_Cyber
+
+
 <!-- Công nghệ AJAX dùng để giao tiếp với và truy xuất dữ liệu từ BACKEND -->
 Một số phương thức AJAX thông dụng như:
  - Phương thức GET là lấy dữ liệu
  - Phương thức POST là thêm dữ liệu
  - Phương thức PUT là cập nhật dữ liệu
  - Phương thức DELETE là xóa dữ liệu
+
 
 <!-- js axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js" integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -15,11 +59,14 @@ Một số phương thức AJAX thông dụng như:
 <!-- Đổ bóng dùng box-shadow online -->
 https://html-css-js.com/css/generator/box-shadow/
 
+
 <!-- transform codepen -->
 https://codepen.io/vineethtrv/pen/XKKEgM
 
+
 <!-- scss note -->
 SCSS không thể chạy trực tiếp à phải chạy scss compiler để chuyển scss thành css, ta sử dụng live sass compiler extension để chạy.
+
 
 SCSS có hai chuẩn là SCSS và SASS, thì hai cái này khác nhau về phần coding:
  - Nếu quen code frontend thì code theo SCSS để nhìn cấu trúc tương tự.
@@ -27,13 +74,16 @@ SCSS có hai chuẩn là SCSS và SASS, thì hai cái này khác nhau về phầ
 
 Khi chỉnh trong sass extension phần json, ta sẽ auto compile từ scss hay sass sang css hay min.css. Hai cái css này giống nhau, chỉ khác nhau là min thì nó nhẹ hơn do nó gom lại đỡ tốn dòng hơn và dung lượng nhẹ hơn.
 
+
 <!-- css font awesome 6.2.0 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
 <!-- css boostrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 
 <!-- js boostrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
