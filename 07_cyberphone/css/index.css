@@ -1,17 +1,18 @@
+@charset "UTF-8";
 .abc {
   --color:red;
 }
 
-/* -------------Test-------------*/
-/*----------Background-----------*/
-/*---------Mixin-----------*/
+/*------------- text ------------------*/
+/* ------------- background ------------- */
+/*----------------- mixin (hàm) ----------------*/
 .abc {
   --color:red;
 }
 
-/* -------------Test-------------*/
-/*----------Background-----------*/
-/*---------Mixin-----------*/
+/*------------- text ------------------*/
+/* ------------- background ------------- */
+/*----------------- mixin (hàm) ----------------*/
 .button-primary, .products .container .list-item .col .card .btn-buy {
   font-size: 16px;
   font-weight: 300;
@@ -40,7 +41,6 @@
 }
 
 .text-title-shadow {
-  -webkit-box-shadow: 1px 9px 5px 0px rgba(42, 115, 221, 0.59);
   box-shadow: 1px 9px 5px 0px rgba(42, 115, 221, 0.59);
 }
 
@@ -125,7 +125,6 @@
 }
 
 .shadow, .products .container .list-item .col .card {
-  -webkit-box-shadow: 0px -1px 6px 5px #e5edff;
   box-shadow: 0px -1px 6px 5px #E5EDFF;
 }
 
@@ -133,12 +132,12 @@
   --color:red;
 }
 
-/* -------------Test-------------*/
-/*----------Background-----------*/
-/*---------Mixin-----------*/
+/*------------- text ------------------*/
+/* ------------- background ------------- */
+/*----------------- mixin (hàm) ----------------*/
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
@@ -149,13 +148,13 @@
 }
 
 html {
-  --color: #($text-c0-dark);
-  --bg: #($bg-c0-light);
+  --color: #000;
+  --bg: #fff;
 }
 
 html.dark {
-  --color: #($text-c0-light);
-  --bg: #($bg-c0-dark);
+  --color: #fff;
+  --bg: #000;
 }
 
 body {
@@ -164,7 +163,8 @@ body {
 }
 
 .header {
-  -webkit-box-shadow: 1px 9px 5px 0px rgba(42, 115, 221, 0.59);
+  color: var(--color) !important;
+  background-color: var(--bg) !important;
   box-shadow: 1px 9px 5px 0px rgba(42, 115, 221, 0.59);
 }
 .header .container {
@@ -182,16 +182,16 @@ body {
 .header .container .d-flex .menu a {
   font-size: 18px;
   font-weight: 300;
-  color: #000;
-  margin: 0px 10px;
+  color: var(--color);
+  margin: 0 10px;
   text-decoration: none;
   position: relative;
 }
 .header .container .d-flex .menu a::after {
   content: "";
   position: absolute;
-  transform: scale(0, 1);
   width: 100%;
+  transform: scale(0, 1);
   height: 3px;
   background-color: #2a73dd;
   left: 0;
@@ -227,15 +227,15 @@ body {
   color: #2a73dd;
 }
 .carousel .container .d-flex .title h2 {
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 300;
   color: #000;
-  margin-bottom: 15px;
 }
 .carousel .container .d-flex .title p {
   font-size: 16px;
   font-weight: 300;
   color: #000;
+  margin-bottom: 15px;
 }
 .carousel .container .d-flex .title .btn-info {
   font-size: 16px;
@@ -260,7 +260,7 @@ body {
 }
 .products .container .title {
   text-align: center;
-  padding: 30px 0px;
+  padding: 30px 0;
 }
 .products .container .list-item {
   display: flex;
