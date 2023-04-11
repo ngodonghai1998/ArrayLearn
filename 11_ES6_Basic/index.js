@@ -153,6 +153,15 @@ var sayHello = (name) => {
 }
 
 var sayHelloArrow = name => `hello + ${name}`;
+// Viết tắt của arrow
+
+var renderObject = (id, name) => ({
+    id:id,
+    name:name,
+})
+
+
+
 
 // Bài tập
 let arrColors = ['red', 'green', 'blue', 'pink', 'orange', 'black'];
@@ -198,3 +207,41 @@ renderButton();
 function changeColor(color) {
     document.getElementById('home').style.color = color;
 }
+
+
+//---------- Default parameter values ---------------
+var getUserInfo = (name = "Mị", age = 18) => {
+    if (age > 0 && age <30) {
+        console.log(`${name} còn trẻ ${name} muốn đi chơi !`);
+    }
+}
+
+getUserInfo('Huy');
+
+
+//---------- Rest parameter -------------
+
+//RestParam: Là tham số của hàm nhận nhiều giá trị khi gọi hàm dưới dạng mảng.
+function tinhTong(...arrSo) {
+    switch(arrSo.length) {
+        case 2: {
+            console.log('Tổng = ', arrSo[0] + arrSo [1]);
+        }; 
+
+        break;
+
+        case 3: {
+            console.log('Tổng = ', arrSo[0] + arrSo [1] + arrSo [2]);
+        };
+
+        break;
+
+        default: {
+            console.log('Tham số không hợp lệ!');
+        };
+    }
+}
+
+tinhTong(2, 3);
+tinhTong(2, 3, 5);
+tinhTong(2, 3, 5, 7);
