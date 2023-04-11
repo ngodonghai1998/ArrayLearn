@@ -212,7 +212,7 @@ function changeColor(color) {
 //---------- Default parameter values ---------------
 var getUserInfo = (name = "Mị", age = 18) => {
     if (age > 0 && age <30) {
-        console.log(`${name} còn trẻ ${name} muốn đi chơi !`);
+        // console.log(`${name} còn trẻ ${name} muốn đi chơi !`);
     }
 }
 
@@ -225,19 +225,19 @@ getUserInfo('Huy');
 function tinhTong(...arrSo) {
     switch(arrSo.length) {
         case 2: {
-            console.log('Tổng = ', arrSo[0] + arrSo [1]);
+            // console.log('Tổng = ', arrSo[0] + arrSo [1]);
         }; 
 
         break;
 
         case 3: {
-            console.log('Tổng = ', arrSo[0] + arrSo [1] + arrSo [2]);
+            // console.log('Tổng = ', arrSo[0] + arrSo [1] + arrSo [2]);
         };
 
         break;
 
         default: {
-            console.log('Tham số không hợp lệ!');
+            // console.log('Tham số không hợp lệ!');
         };
     }
 }
@@ -245,3 +245,16 @@ function tinhTong(...arrSo) {
 tinhTong(2, 3);
 tinhTong(2, 3, 5);
 tinhTong(2, 3, 5, 7);
+
+
+/**
+ * Spread operator: Dùng để sao chép giá trị của object hoặc array
+ */
+
+let hocVien1 = {id: 5};
+let hocVien2 = {...hocVien1};
+
+hocVien2.id = 10;
+
+console.log(hocVien1);
+console.log(hocVien2);
