@@ -251,10 +251,198 @@ tinhTong(2, 3, 5, 7);
  * Spread operator: Dùng để sao chép giá trị của object hoặc array
  */
 
-let hocVien1 = {id: 5};
-let hocVien2 = {...hocVien1};
+let hocVien1 = {id: 5, namd:'Huy'};
+let hocVien2 = {...hocVien1, id: 100, phone: '0909090909'};
 
 hocVien2.id = 10;
 
-console.log(hocVien1);
-console.log(hocVien2);
+// console.log('hocvien1: ', hocVien1);
+// console.log('hocvien2: ', hocVien2);
+
+let arr1 = [1, 2, 3, 4, 5];
+let arr2 = [...arr1];
+arr2.push(6);
+
+console.log('arr1',arr1);
+console.log('arr2',arr2);
+
+// Detructuring 
+// Dùng để  bóc tách phần tử trong mảng hoặc object
+
+let prod10 = {
+    id:5,
+    name: 'Iphone',
+    price: 1000,
+    showInfo: function () {
+        console.log('show info:');
+        console.log('price:', this.price);
+    }
+}
+
+//es5
+// let id = prod10.id;
+
+//es6
+let {id:maSP,name, showInfo, ...restProd} = prod10;
+// console.log(restProd);
+
+showInfo.bind(prod10)();
+
+// console.log(maSP);
+
+// function main() {
+//     console.log(1);
+    
+//     return function () {
+//         console.log(2);
+//     }
+// }
+// main();
+// main()();
+
+//Đối với mảng (tuple)
+
+let [idProd, nameProd, priceProd, showInfoProd] = [5, 'Iphone', 1000, 
+    function(){
+        console.log('Giá tiền', thongTinSP[2]);
+}]
+
+console.log('TênSP', nameProd);
+
+
+// object literal: Sử dụng tên biến làm tên thuộc tính
+
+let tenLopHoc = 'Cybersoft BC43';
+let maLop = 'BC43';
+
+let lopHoc = {
+    maLop,
+    tenLopHoc
+}
+
+console.log('lopHoc',lopHoc);
+
+
+//dynamic key
+
+let hocSinh = {
+    ['mã học viên']: 'BCSV001',
+}
+
+// console.log(hocSinh);
+// hocSinh['mã học viên'];
+
+var tagInput = document.getElementById('tenSP');
+
+let sanPham = {
+    [tagInput.id]: tagInput.value,
+}
+
+console.log(sanPham);
+
+/*
+    for in: thường dùng để duyệt key của object.
+
+    for of: thường dùng để duyệt các phần tử của mảng.
+*/
+
+// let arrProduct = [
+//     {id: 1, name: 'Galaxy note 20', price: 1000},
+//     {id: 2, name: 'Galaxy note 21', price: 2000},
+//     {id: 3, name: 'Galaxy note 22', price: 3000},
+
+// ]
+
+// //Bài tập: log ra tất cả sản phẩm trong mảng arrProduct
+
+// for (let phone of arrProduct) {
+//     console.log(phone);
+// }
+
+
+// for (let index in arrProduct) {
+//     console.log('index:', index);
+//     console.log('object', arrProduct[index]);
+// }
+
+
+let productPhone = {id: 3, name: 'Galaxy note 22', price: 3000};
+
+for (let key in productPhone){
+    console.log(key, productPhone[key]);
+}
+
+let productPhoneTest = [
+    5,'phone test',
+]
+
+for (let keyTest of productPhoneTest) {
+    console.log(keyTest);
+}
+
+/* Cấu trúc của một object:
+
+    let object = {
+        key: value,
+        key: value,
+        key: value,
+    }
+
+    let array = {
+        index: value,
+        index: value,
+        index: value,
+    }
+
+    for of sẽ duyệt vế bên phải, còn for in sẽ duyệt vế bên trái.
+*/
+
+
+// Bài tập
+
+document.querySelector('#formNhanVien').onsubmit = function(event) {
+    event.preventDefault(); //Chăn reload browser
+
+    let arrInput = document.querySelectorAll('#formNhanVien input,#formNhanVien select');
+
+    let nhanVien = {};
+    for (let input of arrInput){
+
+        //Sử dụng detructuring: Sử dụng bóc tách phần tử
+        let {id,value,style} = input;
+
+        style.backgroundColor = 'blue !important';
+        //let id = input.id; //maNhanVien
+        //let value = input.value; //1
+        // let name = input.name;
+        nhanVien[id] = value;
+
+    }
+
+    let contentHTML = '';
+    for (let key in nhanVien) {
+        contentHTML += `
+            <p>${key} : ${nhanVien[key]}</p>
+        `
+    }
+
+    document.querySelector('#ketQuaHienThi').innerHTML = contentHTML;
+
+}
+
+//import
+
+import { ProductES6, DOMAIN_API as API_URL } from "./models/Product.js";
+
+//import file default 
+
+import PrototypeProduct from "./models/Product.js";
+
+
+
+let prod15 = new ProductES6();
+console.log(prod15);
+console.log(API_URL);
+
+let prod20 = new PrototypeProduct();
+console.log(prod20);
