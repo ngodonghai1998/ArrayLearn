@@ -411,7 +411,7 @@ document.querySelector('#formNhanVien').onsubmit = function(event) {
         //Sử dụng detructuring: Sử dụng bóc tách phần tử
         let {id,value,style} = input;
 
-        style.backgroundColor = 'blue !important';
+        style.backgroundColor = 'blue';
         //let id = input.id; //maNhanVien
         //let value = input.value; //1
         // let name = input.name;
@@ -446,3 +446,8 @@ console.log(API_URL);
 
 let prod20 = new PrototypeProduct();
 console.log(prod20);
+
+
+import {gv,gv2} from "./models/SinhVien.js";
+console.log('gv', gv);
+console.log('gv2',gv2);
