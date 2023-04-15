@@ -168,8 +168,8 @@
           <form class="needs-validation" id="foodForm">
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="foodID">Mã Món</label>
-                <input type="text" class="form-control" id="foodID" placeholder="Nhập ID" value="" required>
+                <label for="maMonAn">Mã Món</label>
+                <input type="text" class="form-control" id="maMonAn" placeholder="Nhập ID" value="" required>
                 <div id="invalidID" class="invalid-feedback">
                 </div>
               </div>
@@ -245,12 +245,21 @@
       </div>
     </div>
   </div>
+
+
+  <!-- tìm các thẻ input nhập liệu dựa vào style -->
+  <style>
+    .modal-body input, .modal-body select, .modal-body textarea{
+      background-color: orange !important;
+    }
+  </style>
+
   <script src="../../assets/lib/js/Jquery/jquery-3.5.1.slim.min.js"></script>
   <script src="../../assets/lib/js/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   
-  <script type="module" src="../controllers/v2/main-v2.js"></script>
+  <script type="module" src="../controllers/food-list.js"></script>
 </body>
 
 </html>
