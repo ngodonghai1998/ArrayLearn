@@ -19,13 +19,21 @@ export class Menu {
             Object.assign(monAn,mon);
 
             htmlContent += `<tr>
-                <td>${mon.maMon}</td>
-                <td>${mon.tenMon}</td>
-                <td>${mon.loai}</td>
-                <td>${mon.giaMon}</td>
-                <td>${mon.khuyenMai}</td>
-                <td>${mon.tinhGiaKhuyenMai()}</td>
-                <td>${mon.tinhTrang}</td>
+                <td>${monAn.maMonAn}</td>
+                <td>${monAn.tenMon}</td>
+                <td>${monAn.loai}</td>
+                <td>${monAn.giaMon}</td>
+                <td>${monAn.khuyenMai}</td>
+                <td>${monAn.tinhGiaKhuyenMai()}</td>
+                <td>${monAn.tinhTrang}</td>
+                <td>
+                    <button class="btn btn-danger" onclick="xoaMonAn('${monAn.maMonAn}')">X</button>
+
+                    <button class="btn btn-primary mx-2" onclick="suaMonAn('${monAn.maMonAn}')">
+                    <i class="fa fa-edit"></i>
+                    </button>
+
+                </td>
             </tr>`;
         }
 
@@ -44,6 +52,41 @@ export class Menu {
             this.danhSachMonAn = JSON.parse(stringDSMA); 
         }
     }
+
+    xoaMonAn(maMon) {
+        let indexDel = -1;
+        for (let index in this.danhSachMonAn) {
+            if(this.danhSachMonAn[index].maMonAn === maMon){
+                this.danhSachMonAn.splice(index,1);
+                break;
+            }
+        }
+    }
+
+    layThongTinMonAn(maMon) {
+        for (let mon of this.danhSachMonAn) {
+            if (mon.maMonAn === maMon){
+                return mon;
+            }
+        }
+
+        return undefined;
+    }
+
+    capNhatMonAn(monAnChinhSua) {
+        //Tìm ra món ăn trong danh sách món ăn
+        for (let monAn of this.danhSachMonAn) {
+            //monAn = {maMonAn:'1',tenMonAn:'Cơm chiên',...}
+            //monAnChinhSua = {maMonAn:'1',tenMonAn:'Cơm chiên cá mặn',...}
+            if (monAn.maMonAn == monAnChinhSua.maMonAn) {
+                // monAn.tenMon = monAnChinhSua.tenMon;
+                for (let key in monAn){
+                    monAn[key] = monAnChinhSua[key];
+                }
+            }
+            
+        }
+    }
 }
 
 /*
@@ -56,17 +99,17 @@ export class Menu {
 */
 
 //Dùng phương pháp merge bằng cách sử dụng assign
-let obA =  {
-    id:'',
-    tinhGiaKhuyenMai: function() {},
-    id:1,
-}
+// let obA =  {
+//     id:'',
+//     tinhGiaKhuyenMai: function() {},
+//     id:1,
+// }
 
-let obB =  {
-    id: 1
-}
+// let obB =  {
+//     id: 1
+// }
 
-Object.assign(obA,obB);
+// Object.assign(obA,obB);
 
 
 
