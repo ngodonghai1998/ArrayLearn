@@ -22,7 +22,7 @@
  - B03: Kiểm tra có thư viện package.json, nếu không có thì hãy chạy: npm install
  - B04: Run: npm run build - để build dự án.
 
-
+*** return trong jsx là một đối tượng: Object
 
 *** Coi lại vid ES buổi 1 hướng dẫn làm BT JS và SASS.
 
