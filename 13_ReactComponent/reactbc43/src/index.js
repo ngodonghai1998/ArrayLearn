@@ -1,8 +1,10 @@
 //import các thư viện react
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DataBinding from './Component/DataBinding/DataBinding.jsx';
-import HandleEvent from './Component/HandleEvent/HandleEvent.jsx';
+import DemoState from './Components/State/DemoState';
+// import DataBinding from './Components/DataBinding/DataBinding';
+// import HandleEvent from './Components/HandleEvent/HandleEvent';
+// import DemoLogin from './Components/State/DemoLogin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -11,7 +13,9 @@ root.render(
 	<div>
 		{/* <Home /> */}
 		{/* <DataBinding/> */}
-		<HandleEvent/>
+		{/* <HandleEvent/> */}
+		{/* <DemoLogin/> */}
+		<DemoState />
 	</div>
 );
 
