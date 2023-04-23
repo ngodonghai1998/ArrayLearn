@@ -23,6 +23,7 @@ root.render(
 		{/* <StyleDemo /> */}
 		{/* <RenderWithMap /> */}
 		<DemoPageLogin />
+		<p className='color-red'>123 abc</p>
 	</div>
 );
 
