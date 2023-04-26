@@ -9,6 +9,7 @@ import HandleEvent from './Components/HandleEvent/HandleEvent';
 import DemoLogin from './Components/State/DemoLogin';
 import DemoPageLogin from './Components/State/DemoPageLogin';
 import './assets/scss/index.scss';
+import DemoProps from './Props/DemoProps';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -22,8 +23,8 @@ root.render(
 		{/* <DemoState /> */}
 		{/* <StyleDemo /> */}
 		{/* <RenderWithMap /> */}
-		<DemoPageLogin />
-		<p className='color-red'>123 abc</p>
+		{/* <DemoPageLogin /> */}
+		<DemoProps /> 
 	</div>
 );
 
