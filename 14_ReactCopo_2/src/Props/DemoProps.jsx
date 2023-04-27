@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import TextDemo from './TextDemo'
 import Post from './Post'
+import BaiTapChonXe from '../Components/State/BaiTapChonXe'
+import DemoChangeFontSize from '../Components/State/DemoChangeFontSize'
 
 export default class DemoProps extends Component {
     render() {
@@ -29,8 +31,16 @@ export default class DemoProps extends Component {
                 <hr />
 
                 <h3>Danh sách bài viết</h3>
-                <Post info = {post1}/>
-                <Post info = {post2}/>
+                <Post info = {post1} TheBaiTap={BaiTapChonXe}>
+                    <div className='alert alert-success'>
+                        Ghi chú 1
+                    </div>
+                </Post>
+                <Post info = {post2} TheBaiTap={DemoChangeFontSize}>
+                    <div className='alert alert-danger'>
+                        Ghi chú 2
+                    </div>
+                </Post>
             </div>
         )
     }
