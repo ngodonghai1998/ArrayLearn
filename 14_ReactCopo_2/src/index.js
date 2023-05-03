@@ -10,6 +10,7 @@ import DemoLogin from './Components/State/DemoLogin';
 import DemoPageLogin from './Components/State/DemoPageLogin';
 import './assets/scss/index.scss';
 import DemoProps from './Props/DemoProps';
+import ProductList from './Props/ProductList/ProductList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -24,7 +25,8 @@ root.render(
 		{/* <StyleDemo /> */}
 		{/* <RenderWithMap /> */}
 		{/* <DemoPageLogin /> */}
-		<DemoProps /> 
+		{/* <DemoProps />  */}
+		<ProductList />
 	</div>
 );
 
