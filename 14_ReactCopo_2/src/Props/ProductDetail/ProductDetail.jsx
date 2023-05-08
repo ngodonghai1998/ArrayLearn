@@ -20,16 +20,31 @@ export default class ProductDetail extends Component {
         ]
     }
 
+    /* state đặt ở component nào thì hàm setState viết ở component đó */
+
+    themGioHang = (spClick) => {
+        spClick = {...spClick, soLuong: 1};
+        console.log('Thêm hàng',spClick);
+        //Thêm sản phẩm vào giỏ hàng
+        this.state.arrGioHang.push(spClick);
+        //this.setState();
+
+        //Gán lại state bằng state mới.
+        this.setState({
+            arrGioHang: this.state.arrGioHang,
+        })
+    }
+
     renderProduct = () => {
         return dataPhone.map((dienThoai) => {
             return <div className='col-md-4 mt-2' key={dienThoai.maSP}>
-                <Item phone = {dienThoai} xemDetail={this.xemChiTiet}/>
+                <Item themGioHang = {this.themGioHang} phone = {dienThoai} xemDetail={this.xemChiTiet}/>
             </div>
         })
     }
 
     xemChiTiet = (spClick) => {
-        console.log(spClick);
+        // console.log(spClick);
         this.setState({
             spChiTiet: spClick,
         })
@@ -76,7 +91,7 @@ export default class ProductDetail extends Component {
 
                 <div className='row' style={{ minHeight: 400 }}>
                     <div className='col-3'>
-                        <h3 className='text-center'>{tenSP}</h3>
+                        <h3 className='text-center'>{this.state.spChiTiet.tenSP}</h3>
                         <img src={hinhAnh} alt="..." className='w-100' />
                     </div>
                     <div className='col-9'>

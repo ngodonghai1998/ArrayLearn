@@ -4,7 +4,7 @@ export default class Item extends Component {
     render() {
 
         //Lấy từ propName của component cha truyền vào
-        let {phone, xemDetail} = this.props;
+        let {phone, xemDetail, themGioHang} = this.props;
 
         return (
             <div className='card'>
@@ -16,7 +16,9 @@ export default class Item extends Component {
                         xemDetail(phone);
                     }}>Xem chi tiết</button>
 
-                    <button className='btn btn-dark mx-2'><i classname='fa fa-cart-plus'></i>Thêm giỏ hàng</button>
+                    <button className='btn btn-dark mx-2' onClick={()=>{
+                        themGioHang(phone);
+                    }}><i classname='fa fa-cart-plus'></i>Thêm giỏ hàng</button>
                 </div>
             </div>
         )
