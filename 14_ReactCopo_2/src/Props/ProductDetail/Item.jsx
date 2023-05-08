@@ -15,6 +15,8 @@ export default class Item extends Component {
                     <button className='btn btn-success' onClick={() => {
                         xemDetail(phone);
                     }}>Xem chi tiết</button>
+
+                    <button className='btn btn-dark mx-2'><i classname='fa fa-cart-plus'></i>Thêm giỏ hàng</button>
                 </div>
             </div>
         )
