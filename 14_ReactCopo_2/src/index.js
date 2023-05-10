@@ -12,12 +12,17 @@ import './assets/scss/index.scss';
 import DemoProps from './Props/DemoProps';
 import ProductList from './Props/ProductList/ProductList';
 import ProductDetail from './Props/ProductDetail/ProductDetail';
+//Cấu hình react router dom
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import Home from './Props/Home';
+import HomeTemplate from './Templates/HomeTemplate';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //Nội dung toàn bộ website sẽ được chứa trong hàm render.
 root.render(
 	<div>
+		
 		{/* <Home /> */}
 		{/* <DataBinding/> */}
 		{/* <HandleEvent/> */}
@@ -28,7 +33,23 @@ root.render(
 		{/* <DemoPageLogin /> */}
 		{/* <DemoProps />  */}
 		{/* <ProductList /> */}
-		<ProductDetail />
+		{/* <ProductDetail /> */}
+		
+		
+		<BrowserRouter>
+			<Routes>
+				{/* <Route path='' element={<Home />}></Route>
+				<Route path='home' element={<Home />}></Route>
+				<Route path='cart' element={<ProductDetail />}></Route> */}
+
+				<Route path='' element={<HomeTemplate />}>
+					<Route index element={<Home />}></Route>
+					<Route path='cart' element={<ProductDetail />}></Route>
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	
+	
 	</div>
 );
 

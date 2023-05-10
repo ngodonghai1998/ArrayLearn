@@ -15,23 +15,73 @@ export default class ProductDetail extends Component {
 
         arrGioHang: [
             { maSP: 3, tenSP: "Iphone XS Max", giaBan: 27000000, hinhAnh: "./img/applephone.jpg", soLuong: 2 },
-            { maSP: 3, tenSP: "Iphone XS Max", giaBan: 27000000, hinhAnh: "./img/applephone.jpg", soLuong: 2 },
-            { maSP: 3, tenSP: "Iphone XS Max", giaBan: 27000000, hinhAnh: "./img/applephone.jpg", soLuong: 2 }
+
         ]
+    }
+
+    tangGiamSoLuong = (maSP, soLuong) => {
+        console.log(maSP, soLuong);
+
+        //Tìm ra sản phẩm được click dựa vào mã
+        let spGH = this.state.arrGioHang.find(item => item.maSP === maSP);
+
+        if (spGH) {
+            spGH.soLuong += soLuong;
+
+            if (spGH.soLuong < 1) {
+                if (window.confirm('Bạn có muốn xóa không?')){
+                    this.xoaSanPham(spGH.maSP);
+                    return;
+                } else {
+                    spGH.soLuong -= soLuong;
+                }
+            }
+        }
+
+        //Cập nhật state
+        this.setState({
+            arrGioHang: this.state.arrGioHang, 
+        })
+    }
+
+    //Xóa sản phẩm
+    xoaSanPham = (maSP) => {
+        //Dựa vào mã tìm ra index của sản phẩm cần xóa trong arrGioHang
+        // console.log(maSP);
+        let index = this.state.arrGioHang.findIndex(item => item.maSP === maSP);
+
+        if (index !== 1) {
+            this.state.arrGioHang.splice(index,1);
+        }
+
+        //setState
+        this.setState({
+            arrGioHang: this.state.arrGioHang,
+        })
     }
 
     /* state đặt ở component nào thì hàm setState viết ở component đó */
 
     themGioHang = (spClick) => {
         spClick = {...spClick, soLuong: 1};
+
+        //Kiểm tra sản phẩm đã có trong arr Giỏ hàng hay chưa? Nếu có thì lấy ra tăng số lượng, còn chưa thì push vào.
+        let gioHang = this.state.arrGioHang;
+        
+        let spGH = gioHang.find(item => item.maSP === spClick.maSP);
+
+        if (spGH) {
+            spGH.soLuong += 1;
+        } else {
+            gioHang.push(spClick);
+        }
+
         console.log('Thêm hàng',spClick);
-        //Thêm sản phẩm vào giỏ hàng
-        this.state.arrGioHang.push(spClick);
         //this.setState();
 
         //Gán lại state bằng state mới.
         this.setState({
-            arrGioHang: this.state.arrGioHang,
+            arrGioHang: gioHang,
         })
     }
 
@@ -57,7 +107,7 @@ export default class ProductDetail extends Component {
         return (
             <div className='container'>
                 <h3>Giỏ hàng</h3>
-                <Cart arrGioHang={this.state.arrGioHang}/>
+                <Cart tangGiamSoLuong={this.tangGiamSoLuong} xoaSanPham={this.xoaSanPham} arrGioHang={this.state.arrGioHang}/>
                 <h3>Danh sách sản phẩm</h3>
                 <div className='row'>
                     {this.renderProduct()}
