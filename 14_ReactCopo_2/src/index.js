@@ -13,9 +13,13 @@ import DemoProps from './Props/DemoProps';
 import ProductList from './Props/ProductList/ProductList';
 import ProductDetail from './Props/ProductDetail/ProductDetail';
 //Cấu hình react router dom
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 import Home from './Props/Home';
 import HomeTemplate from './Templates/HomeTemplate';
+import BaiTapChonXe from './Components/State/BaiTapChonXe';
+import Login from './Pages/Login';
+import Profile from './Pages/Profile';
+import ReactFormDemo from './ReactFormDemo/ReactFormDemo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -45,6 +49,11 @@ root.render(
 				<Route path='' element={<HomeTemplate />}>
 					<Route index element={<Home />}></Route>
 					<Route path='cart' element={<ProductDetail />}></Route>
+					<Route path='cars' element={<BaiTapChonXe />}></Route>
+					<Route path='login' element={<Login />}></Route>
+					<Route path='profile' element={<Profile />}></Route>
+					<Route path='react-form' element={<ReactFormDemo />}></Route>
+					<Route path='*' element={<Navigate to={'/'} />}></Route>
 				</Route>
 			</Routes>
 		</BrowserRouter>
