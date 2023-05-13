@@ -5,8 +5,17 @@ export default class ReactFormDemo extends Component {
 
     state = {
         arrProduct: [
-            {idProduct: '01', name: 'IphoneX', price: 1000, type: 'Phone', img:'https://i.pravatar.cc?u=1', desc: 'Điện thoại iphonex'},
+            {idProduct: '01', name: 'IphoneX', price: 1000, type: 'Phone', img:'https://i.pravatar.cc?u=1', desc: 'Điện thoại iphoneX'},
+            {idProduct: '02', name: 'IphoneXS', price: 2000, type: 'Phone', img:'https://i.pravatar.cc?u=2', desc: 'Điện thoại iphoneXS'},
         ],
+        productEdit: {
+            idProduct: '', 
+            name: '', 
+            price: 0, 
+            type: '', 
+            img:'', 
+            desc: ''
+        }
     }
 
     addProduct = (prodInfo) => {
@@ -20,10 +29,24 @@ export default class ReactFormDemo extends Component {
 
     }
 
+    delProduct = (idProductDel) => {
+        //this.setState
+        console.log(idProductDel);
+        let indexDel = this.state.arrProduct.findIndex(prod => prod.idProduct === idProductDel);
+        if (indexDel !== -1) {
+            this.state.arrProduct.splice(indexDel, 1)
+        }
+
+        //Cuối cùng là setState là xong
+        this.setState({
+            arrProduct: this.state.arrProduct,
+        })
+    }
+
     render() {
         return (
             <div className='container'>
-                <CreateProduct  addProduct={this.addProduct}/>
+                <CreateProduct productEdit={this.state.productEdit} addProduct={this.addProduct} />
 
                 <table className='table mt-2'>
                     <thead className='bg-dark text-white fw-bold'>
@@ -46,7 +69,16 @@ export default class ReactFormDemo extends Component {
                                 <td>{prod.price}</td>
                                 <td>{prod.type}</td>
                                 <td>{prod.desc}</td>
-                                <td></td>
+                                <td>
+                                    <button className='btn btn-primary' onClick={()=> {
+                                        this.setState({
+                                            productEdit: prod,
+                                        })
+                                    }}>Edit</button>
+                                    <button className='btn btn-danger' onClick={() => {
+                                        this.delProduct(prod.idProduct);
+                                    }}>Del</button>
+                                </td>
 
                             </tr>
                         })}
