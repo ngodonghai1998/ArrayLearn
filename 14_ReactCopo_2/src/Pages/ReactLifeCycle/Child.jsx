@@ -1,6 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
 
-export default class Child extends Component {
+/*
+	PureComponent là một class tương tự như Component tuy nhiên sẽ không có lifecycle shouldComponentUpdate.
+	Thay vào đó PureComponent sẽ tự nhận biết props khi có thay đổi thì sẽ render, còn không thay đổi thì không render.
+	Tuy nhiên, sự so sánh props có thay đổi hay không chỉ là shallow compare (so sánh được những giá trị primitive value string, boolean, number, undefined, null).
+*/
+
+export default class Child extends PureComponent {
 
 	constructor(props) {
         super(props);
@@ -16,13 +22,18 @@ export default class Child extends Component {
         return null;
     }
 
-	shouldComponentUpdate() {
-        return false;
-    }
+	// shouldComponentUpdate(newProps, newState) {
+    //     console.log('this.props.like', this.props.like);
+	// 	console.log('newProps',newProps.like);
+	// 	if (newProps.like !== this.props.like) {
+	// 		return true
+	// 	}
+	// 	return false;
+    // }
 
 	render() {
         console.log('render child');
-		let {like} =this.props;
+		let {obLike} =this.props;
 
 		return (
 			<div className='bg-dark text-white p-3 display-4 mt-2'>
@@ -30,7 +41,7 @@ export default class Child extends Component {
 				<br/>
 				Render 20 component con
 				<br/>
-				{like} <i className='fa fa-heart text-white'></i>
+				{obLike.like} <i className='fa fa-heart text-white'></i>
 			</div>
 		)
 	}
@@ -40,6 +51,8 @@ export default class Child extends Component {
     }
 
 	componentDidUpdate() {
+		//Tuyệt đối không setState khi không có điệu kiện
+
         console.log('componentDidUpdate child');
     }
 }

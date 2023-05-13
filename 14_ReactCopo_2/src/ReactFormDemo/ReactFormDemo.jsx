@@ -43,10 +43,25 @@ export default class ReactFormDemo extends Component {
         })
     }
 
+    updateProduct = (newProduct) => {
+        let prod = this.state.arrProduct.find(prod => prod.idProduct == newProduct.idProduct);
+        if (prod) {
+            for (let key in prod) {
+                prod[key] = newProduct[key];
+
+            }
+        }
+
+        //Set state sau khi cập nhật.
+        this.setState({
+            arrProduct: this.state.arrProduct,
+        })
+    }
+
     render() {
         return (
             <div className='container'>
-                <CreateProduct productEdit={this.state.productEdit} addProduct={this.addProduct} />
+                <CreateProduct updateProduct={this.updateProduct} productEdit={this.state.productEdit} addProduct={this.addProduct} />
 
                 <table className='table mt-2'>
                     <thead className='bg-dark text-white fw-bold'>

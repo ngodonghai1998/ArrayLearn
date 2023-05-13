@@ -85,9 +85,28 @@ export default class CreateProduct extends Component {
         })
     }
 
+    //Can thiệp trước khi props mới truyền vào và render ra giao diện thì đem props gắn vào state
+    // static getDerivedStateFromProps(newProps, currentState) {
+    //     if (newProps.productEdit.idProduct !== currentState.values.idProduct) {
+    //         //Bấm sửa
+    //         currentState.values = {...newProps.productEdit};
+    //         return currentState;
+    //     }
+
+    //     return null;
+    // }
+
+
+    //CHỉ chạy khi props thay đổi và trước khi render (thường dùng cho việc gán props và state)
+    componentWillReceiveProps(newProps) {
+        this.setState({
+            values: newProps.productEdit,
+        })
+    }
+
     render() {
 
-        let {idProduct, name, price, img, type, desc} = this.props.productEdit;
+        let {idProduct, name, price, img, type, desc} = this.state.values;
 
         return (
             <form className='card' onSubmit={this.handleSubmit}>
@@ -140,6 +159,12 @@ export default class CreateProduct extends Component {
                 </div>
                 <div className='card-footer'>
                     <button className='btn btn-success' type='submit'>Create</button>
+                    <button className='btn btn-success' type='button' onClick={() => {
+                        //Lấy hàm update state từ component cha truyền vào con
+                        let {updateProduct} = this.props;
+                        //Gửi ra dữ liệu sau khi thay đổi product
+                        updateProduct({...this.state.values});
+                    }}>Update</button>
                 </div>
             </form>
         )
