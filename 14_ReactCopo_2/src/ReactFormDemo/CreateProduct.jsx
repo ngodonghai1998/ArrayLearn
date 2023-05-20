@@ -97,7 +97,7 @@ export default class CreateProduct extends Component {
     // }
 
 
-    //CHỉ chạy khi props thay đổi và trước khi render (thường dùng cho việc gán props và state)
+    //Chỉ chạy khi props thay đổi và trước khi render (thường dùng cho việc gán props và state)
     componentWillReceiveProps(newProps) {
         this.setState({
             values: newProps.productEdit,

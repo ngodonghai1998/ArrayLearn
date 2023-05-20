@@ -44,7 +44,7 @@ export default class ReactFormDemo extends Component {
     }
 
     updateProduct = (newProduct) => {
-        let prod = this.state.arrProduct.find(prod => prod.idProduct == newProduct.idProduct);
+        let prod = this.state.arrProduct.find(prod => prod.idProduct === newProduct.idProduct);
         if (prod) {
             for (let key in prod) {
                 prod[key] = newProduct[key];

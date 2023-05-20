@@ -15,6 +15,12 @@
 <!-- js axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js" integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+*** Giá trị cho regex: /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
+
+*** Khái niệm của map trong javascript??? Nên coi lại??? Khái niệm trim() ???
+
+*** regex:  là phương thức check lỗi nhập liệu. Ví dụ: regex for string, number only, for email, for nickname.
+
 *** Cách xác định đặt state ở đâu trong react component: Xem hình ảnh trong document về props và state.
 
     Kiểm tra props có truyền sang không, thì F12 trong web, chuyển sang tab component, rồi coi có props được tạo trong đó không.
