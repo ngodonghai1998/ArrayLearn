@@ -164,6 +164,7 @@ export default class CreateProduct extends Component {
                         let {updateProduct} = this.props;
                         //Gửi ra dữ liệu sau khi thay đổi product
                         updateProduct({...this.state.values});
+                        console.log(updateProduct);
                     }}>Update</button>
                 </div>
             </form>
