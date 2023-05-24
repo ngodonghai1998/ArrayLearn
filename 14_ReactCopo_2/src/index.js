@@ -22,11 +22,15 @@ import Profile from './Pages/Profile';
 import ReactFormDemo from './ReactFormDemo/ReactFormDemo';
 import ReactLifeCycle from './Pages/ReactLifeCycle/ReactLifeCycle';
 
+//Cấu hình redux, provider dùng để kết nối store với nguyên cả ứng dụng.
+import {Provider} from 'react-redux'; 
+import { store } from './redux/configStore';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //Nội dung toàn bộ website sẽ được chứa trong hàm render.
 root.render(
-	<div>
+	<Provider store={store}>
 		
 		{/* <Home /> */}
 		{/* <DataBinding/> */}
@@ -61,6 +65,6 @@ root.render(
 		</BrowserRouter>
 	
 	
-	</div>
+	</Provider>
 );
 

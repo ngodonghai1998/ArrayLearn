@@ -16,6 +16,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js" integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 *** REDUX: Dùng để quản lý state trong react. Đầu tiên là sẽ tải redux toolkit về. npm install @reduxjs/toolkit
+	
+	Tiếp theo, do redux có thể được sử dụng để kết nối với nhiều thư viện khác nhau, nên để sử dụng được cho react cần phải thêm: npm i react-redux
+
+	Ví dụ mẫu khai báo, đầu tiên tạo file js ví dụ như configStore.js sau đó khai báo:
+		import {configureStore} from "@reduxjs/toolkit";
+
+		export const store = configureStore({
+        		reducer: {}
+		}); 
+
+	Tiếp, cấu hình trong file index.js như:
+
+		//Cấu hình redux, provider dùng để kết nối store với nguyên cả ứng dụng.
+		import {Provider} from 'react-redux'; 
+		import { store } from './redux/configStore';
+
+		<Provider store={store}>	......	</Provider>
+
+	Muốn biết redux có chạy không, thì cài extension sau: redux dev tools của chrome. 
+	Tạm hiểu reducer là một state.
 
  
 
