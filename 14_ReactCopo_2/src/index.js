@@ -25,6 +25,8 @@ import ReactLifeCycle from './Pages/ReactLifeCycle/ReactLifeCycle';
 //Cấu hình redux, provider dùng để kết nối store với nguyên cả ứng dụng.
 import {Provider} from 'react-redux'; 
 import { store } from './redux/configStore';
+import DemoTangGiamSoLuong from './Pages/ReduxDemo/DemoTangGiamSoLuong';
+import DemoBaiTapChonXe from './Pages/ReduxDemo/DemoBaiTapChonXe';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -59,6 +61,8 @@ root.render(
 					<Route path='profile' element={<Profile />}></Route>
 					<Route path='react-form' element={<ReactFormDemo />}></Route>
 					<Route path='react-lifecycle' element={<ReactLifeCycle />}></Route>
+					<Route path='redux-demo1' element={<DemoTangGiamSoLuong/>}></Route>
+					<Route path='redux-demo2' element={<DemoBaiTapChonXe/>}></Route>
 					<Route path='*' element={<Navigate to={'/'} />}></Route>
 				</Route>
 			</Routes>

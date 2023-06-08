@@ -13,16 +13,31 @@ export default class HomeTemplate extends Component {
                 {/* Chuyển thẻ <a href=''></a> thành <NavLink to=''></NavLink> */}
                 <header className='header p-3 bg-dark text-white'>
                     <nav className='d-flex'>
-                        <NavLink to='/' className={({isActive})=> isActive? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({isActive})=> isActive? {border:'1px solid orange'} : {}}>Home</NavLink>
-                        <NavLink to='/cart' className={({isActive})=> isActive? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({isActive})=> isActive? {border:'1px solid orange'} : {}}>Cart (Demo props)</NavLink>
-                        <NavLink to='/cars' className={({isActive})=> isActive? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({isActive})=> isActive? {border:'1px solid orange'} : {}}>Cars</NavLink>
-                        <NavLink to='/login' className={({isActive})=> isActive? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({isActive})=> isActive? {border:'1px solid orange'} : {}}>Login</NavLink>
-                        <NavLink to='/react-form' className={({isActive})=> isActive? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({isActive})=> isActive? {border:'1px solid orange'} : {}}>React-form</NavLink>
-                        <NavLink to='/react-lifecycle' className={({isActive})=> isActive? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({isActive})=> isActive? {border:'1px solid orange'} : {}}>React-lifecycle</NavLink>
+                        <NavLink to='/' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>Home</NavLink>
+                        <NavLink to='/cart' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>Cart (Demo props)</NavLink>
+                        <NavLink to='/cars' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>Cars</NavLink>
+                        <NavLink to='/login' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>Login</NavLink>
+                        <NavLink to='/react-form' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>React-form</NavLink>
+                        <NavLink to='/react-lifecycle' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>React-lifecycle</NavLink>
+
+
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redux</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <NavLink class="dropdown-item nav-link" to="/redux-demo1">Demo tăng giảm SL</NavLink>
+                                <NavLink class="dropdown-item nav-link" to="/redux-demo2">Demo chọn xe</NavLink>
+                            </div>
+                        </div>
+
+
+
+
+
+
                     </nav>
                 </header>
 
-                <main style={{minHeight:'650px'}}>
+                <main style={{ minHeight: '650px' }}>
                     <Outlet></Outlet>
                 </main>
 

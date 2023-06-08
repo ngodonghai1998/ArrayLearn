@@ -1,36 +1,39 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { store } from '../../redux/configStore';
+import { connect  } from 'react-redux'
 
-export default class DemoTangGiamSoLuong extends Component {
-  render() {
-    return (
-      <div>DemoTangGiamSoLuong</div>
-    )
-  }
+class DemoTangGiamSoLuong extends Component {
+    render() {
+        return (
+            <div className='container'>
+                {/* Từ redux, gọi ra các đối tượng trong store */}
+                {/* <h1>Number : {store.getState().number}</h1> */}
+                <h1>Number : {this.props.number}</h1>
+                <button className='btn btn-dark mx-2' onClick={() => {
+                    //action là dữ liệu gửi lên redux store
+                    const action = {
+                        type: 'TANG_GIAM_SO_LUONG', //gán id cho một object, number hay string, array ở type.
+                        //Gán dữ liệu truyền đi là payload
+                        payload: 1,
+                    };
+                    //Dùng phương thức dispatch để gửi dữ liệu lên redux.
+                    store.dispatch(action);
+                }}>+</button>
+                <button className='btn btn-dark mx-2'>-</button>
+            </div>
+        )
+    }
 }
 
-{/* <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-        aria-expanded="false" aria-label="Toggle navigation"></button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Action 1</a>
-                    <a class="dropdown-item" href="#">Action 2</a>
-                </div>
-            </li>
-        </ul>
-        <form class="d-flex my-2 my-lg-0">
-            <input class="form-control me-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav> */}
+
+//Hàm lấy state từ redux về và biến this.props của component
+const mapStateToProps = (state) => {
+
+    return {
+        number: state.number,
+    };
+}
+
+const ComponentWithRedux = connect(mapStateToProps)(DemoTangGiamSoLuong);
+
+export default ComponentWithRedux;
