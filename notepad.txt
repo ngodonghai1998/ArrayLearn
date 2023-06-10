@@ -17,6 +17,8 @@
 
 *** rcredux để tạo nhanh hàm có kết nối sẵn với redux.
 
+	Do redux luôn kết nối qua connect nên ta sẽ bỏ đi export và chỉ dùng mỗi export default để nó luôn mặc định dùng export của redux. 
+
 *** REDUX: Dùng để quản lý state trong react. Đầu tiên là sẽ tải redux toolkit về. npm install @reduxjs/toolkit
 	
 	Tiếp theo, do redux có thể được sử dụng để kết nối với nhiều thư viện khác nhau, nên để sử dụng được cho react cần phải thêm: npm i react-redux

@@ -27,6 +27,7 @@ import {Provider} from 'react-redux';
 import { store } from './redux/configStore';
 import DemoTangGiamSoLuong from './Pages/ReduxDemo/DemoTangGiamSoLuong';
 import DemoBaiTapChonXe from './Pages/ReduxDemo/DemoBaiTapChonXe';
+import DemoFormNhanVien from './Pages/ReduxDemo/DemoFormNhanVien';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -63,6 +64,7 @@ root.render(
 					<Route path='react-lifecycle' element={<ReactLifeCycle />}></Route>
 					<Route path='redux-demo1' element={<DemoTangGiamSoLuong/>}></Route>
 					<Route path='redux-demo2' element={<DemoBaiTapChonXe/>}></Route>
+					<Route path='redux-demo3' element={<DemoFormNhanVien/>}></Route>
 					<Route path='*' element={<Navigate to={'/'} />}></Route>
 				</Route>
 			</Routes>

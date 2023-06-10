@@ -1,9 +1,10 @@
-import {configureStore} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import nhanVienReducer from "./reducers/nhanVienReducer";
 
 export const store = configureStore({
     reducer: {
         number: (state = 91, action) => {
-            if (action.type === 'TANG_GIAM_SO_LUONG'){
+            if (action.type === 'TANG_GIAM_SO_LUONG') {
                 state = state + 1;
             }
             return state;
@@ -19,6 +20,24 @@ export const store = configureStore({
             }
 
             return state;
-        }
+        },
+        // stat = 000xxx
+        // nhanVienReducer: (state = { maNhanVien: '001', tenNhanVien: 'Nguyễn Văn A', luongCoBan: '1000' }, action) => {
+
+        //     switch (action.type) {
+        //         case 'CHANGE_INFO': {
+                    
+
+        //         };
+                    
+        //             break;
+            
+        //         default:
+        //             break;
+        //     }
+        //     //Tính chất bất biến của state: immutable
+        //     //state = 000xxx
+        //     return {...state};
+        nhanVienReducer: nhanVienReducer,
     }
 });

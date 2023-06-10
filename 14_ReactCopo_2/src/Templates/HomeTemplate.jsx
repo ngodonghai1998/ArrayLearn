@@ -26,6 +26,7 @@ export default class HomeTemplate extends Component {
                             <div class="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink class="dropdown-item nav-link" to="/redux-demo1">Demo tăng giảm SL</NavLink>
                                 <NavLink class="dropdown-item nav-link" to="/redux-demo2">Demo chọn xe</NavLink>
+                                <NavLink class="dropdown-item nav-link" to="/redux-demo3">Demo Form nhân viên</NavLink>
                             </div>
                         </div>
 
