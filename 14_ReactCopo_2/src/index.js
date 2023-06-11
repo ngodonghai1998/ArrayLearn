@@ -28,6 +28,9 @@ import { store } from './redux/configStore';
 import DemoTangGiamSoLuong from './Pages/ReduxDemo/DemoTangGiamSoLuong';
 import DemoBaiTapChonXe from './Pages/ReduxDemo/DemoBaiTapChonXe';
 import DemoFormNhanVien from './Pages/ReduxDemo/DemoFormNhanVien';
+import HomePage from './Pages/ReduxDemo/ShopDemo/HomePage';
+import Cart from './Props/ProductDetail/Cart';
+import CartPage from './Pages/ReduxDemo/ShopDemo/CartPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -55,7 +58,7 @@ root.render(
 				<Route path='cart' element={<ProductDetail />}></Route> */}
 
 				<Route path='' element={<HomeTemplate />}>
-					<Route index element={<Home />}></Route>
+					<Route index element={<HomePage />}></Route>
 					<Route path='cart' element={<ProductDetail />}></Route>
 					<Route path='cars' element={<BaiTapChonXe />}></Route>
 					<Route path='login' element={<Login />}></Route>
@@ -65,6 +68,8 @@ root.render(
 					<Route path='redux-demo1' element={<DemoTangGiamSoLuong/>}></Route>
 					<Route path='redux-demo2' element={<DemoBaiTapChonXe/>}></Route>
 					<Route path='redux-demo3' element={<DemoFormNhanVien/>}></Route>
+					<Route path='home-page' element={<HomePage/>}></Route>
+					<Route path='cart-page' element={<CartPage/>}></Route>
 					<Route path='*' element={<Navigate to={'/'} />}></Route>
 				</Route>
 			</Routes>

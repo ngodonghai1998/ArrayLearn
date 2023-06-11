@@ -18,6 +18,8 @@
 *** rcredux để tạo nhanh hàm có kết nối sẵn với redux.
 
 	Do redux luôn kết nối qua connect nên ta sẽ bỏ đi export và chỉ dùng mỗi export default để nó luôn mặc định dùng export của redux. 
+	Muốn kết nối với redux, import thư viện connect trong index.js từ react-redux.
+	Thuộc tính type và payload chỉ cho duy nhất 1 thuộc tính;
 
 *** REDUX: Dùng để quản lý state trong react. Đầu tiên là sẽ tải redux toolkit về. npm install @reduxjs/toolkit
 	
