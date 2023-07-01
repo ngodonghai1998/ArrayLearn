@@ -35,6 +35,7 @@ class HomeTemplate extends Component {
                             <NavLink to='/react-form' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>React-form</NavLink>
                             <NavLink to='/react-lifecycle' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>React-lifecycle</NavLink>
 
+                            
 
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redux</a>
@@ -43,6 +44,10 @@ class HomeTemplate extends Component {
                                     <NavLink className="dropdown-item nav-link" to="/redux-demo2">Demo chọn xe</NavLink>
                                     <NavLink className="dropdown-item nav-link" to="/redux-demo3">Demo Form nhân viên</NavLink>
                                 </div>
+                            </div>
+
+                            <div className='nav-item'>
+                                <NavLink className='nav-link' to='/antd'>AntD</NavLink>
                             </div>
                         </div>
 

@@ -1,6 +1,10 @@
 //import các thư viện react
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+//Cài đặt antd
+import 'antd/dist/reset.css';
+import './index.css';
 import StyleDemo from './StyleDemo/StyleDemo';
 import DemoState from './Components/State/DemoState';
 import RenderWithMap from './RenderWithMap/RenderWithMap';
@@ -31,8 +35,15 @@ import DemoFormNhanVien from './Pages/ReduxDemo/DemoFormNhanVien';
 import HomePage from './Pages/ReduxDemo/ShopDemo/HomePage';
 import Cart from './Props/ProductDetail/Cart';
 import CartPage from './Pages/ReduxDemo/ShopDemo/CartPage';
+import RequestAPI from './Pages/RequestAPI/RequestAPI';
+import RequestAPIRedux from './Pages/RequestAPI/RequestAPIRedux';
+import DemoAntd from './Pages/DemoAntd';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+
+
 
 //Nội dung toàn bộ website sẽ được chứa trong hàm render.
 root.render(
@@ -63,6 +74,10 @@ root.render(
 					<Route path='cars' element={<BaiTapChonXe />}></Route>
 					<Route path='login' element={<Login />}></Route>
 					<Route path='profile' element={<Profile />}></Route>
+					<Route path='antd' element={<DemoAntd />}></Route>
+
+
+
 					<Route path='react-form' element={<ReactFormDemo />}></Route>
 					<Route path='react-lifecycle' element={<ReactLifeCycle />}></Route>
 					<Route path='redux-demo1' element={<DemoTangGiamSoLuong/>}></Route>
@@ -70,6 +85,8 @@ root.render(
 					<Route path='redux-demo3' element={<DemoFormNhanVien/>}></Route>
 					<Route path='home-page' element={<HomePage/>}></Route>
 					<Route path='cart-page' element={<CartPage/>}></Route>
+					<Route path='api' element={<RequestAPI/>}></Route>
+					<Route path='api-redux' element={<RequestAPIRedux/>}></Route>
 					<Route path='*' element={<Navigate to={'/'} />}></Route>
 				</Route>
 			</Routes>
