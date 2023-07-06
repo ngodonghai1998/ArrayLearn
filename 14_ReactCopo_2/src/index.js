@@ -38,6 +38,8 @@ import CartPage from './Pages/ReduxDemo/ShopDemo/CartPage';
 import RequestAPI from './Pages/RequestAPI/RequestAPI';
 import RequestAPIRedux from './Pages/RequestAPI/RequestAPIRedux';
 import DemoAntd from './Pages/DemoAntd';
+import DemoHOC from './Pages/DemoHOC';
+import ContainerModel from './HOC/ContainerModel';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -75,6 +77,7 @@ root.render(
 					<Route path='login' element={<Login />}></Route>
 					<Route path='profile' element={<Profile />}></Route>
 					<Route path='antd' element={<DemoAntd />}></Route>
+					<Route path='hoc' element={<DemoHOC/>}></Route>
 
 
 
@@ -90,6 +93,7 @@ root.render(
 					<Route path='*' element={<Navigate to={'/'} />}></Route>
 				</Route>
 			</Routes>
+			<ContainerModel/>
 		</BrowserRouter>
 	
 	

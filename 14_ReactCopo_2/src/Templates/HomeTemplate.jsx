@@ -5,13 +5,22 @@ import { Outlet, NavLink } from 'react-router-dom';
 import CartPage from '../Pages/ReduxDemo/ShopDemo/CartPage';
 
 //import thư viện connect from redux store
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import ResponsiveTemplate from './ResponsiveTemplate';
+import BottomTab from '../Components/BottomTab';
 
+function Footer() {
+    return (
+    <footer className='bg-dark text-white p-3 text-center'>
+        <h1>Footer</h1>
+    </footer>
+    )
+}
 
 class HomeTemplate extends Component {
 
     tinhTongTien = () => {
-        let  tongTien = 0;
+        let tongTien = 0;
         for (let itemCart of this.props.cart) {
             tongTien += itemCart.quantity * itemCart.price;
         }
@@ -19,7 +28,7 @@ class HomeTemplate extends Component {
     }
 
     render() {
-        console.log('template testings',this.props);
+        console.log('template testings', this.props);
         return (
             <div>
                 {/* // Khi làm theo cách này, nhược điểm duy nhất khi gặp phải là thẻ a - thẻ liên kết dẫn đến đường link. Do đó, khi bấm tới ví dụ như Home hay cart thì nó phải load lại trang, không khi đó thì nội dung thay đổi chỉ có trong root, nên chỉ cần load lại trong root là đủ, vậy cần làm gì?
@@ -35,7 +44,7 @@ class HomeTemplate extends Component {
                             <NavLink to='/react-form' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>React-form</NavLink>
                             <NavLink to='/react-lifecycle' className={({ isActive }) => isActive ? 'text-dark mx-2 nav-link bg-white p-2' : 'text-white bg-dark mx-2 nav-link'} style={({ isActive }) => isActive ? { border: '1px solid orange' } : {}}>React-lifecycle</NavLink>
 
-                            
+
 
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redux</a>
@@ -49,20 +58,17 @@ class HomeTemplate extends Component {
                             <div className='nav-item'>
                                 <NavLink className='nav-link' to='/antd'>AntD</NavLink>
                             </div>
+
+                            <div className='nav-item'>
+                                <NavLink className='nav-link' to='/hoc'>HOC</NavLink>
+                            </div>
                         </div>
 
-
                         <div className='w-50 text-end'>
-                            <NavLink className={"text-white"} to='cart-page' style={{textDecoration: 'none'}}>
+                            <NavLink className={"text-white"} to='cart-page' style={{ textDecoration: 'none' }}>
                                 <i className='fa fa-cart-plus fs-3'></i> ({this.props.cart.length} - {this.tinhTongTien()} $)
                             </NavLink>
                         </div>
-
-
-
-
-
-
                     </nav>
                 </header>
 
@@ -70,13 +76,14 @@ class HomeTemplate extends Component {
                     <Outlet></Outlet>
                 </main>
 
-                <footer className='bg-dark text-white p-3 text-center'>
-                    <h1>Footer</h1>
-                </footer>
+                <ResponsiveTemplate component={Footer} mobileComponent={BottomTab}/>
+
             </div>
         )
     }
 }
+
+
 
 const mapStateToProps = (state) => state.cartReducer;
 

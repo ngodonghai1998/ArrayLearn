@@ -74,7 +74,7 @@ export default function DemoAntd() {
 
     const columns = [
         {
-            title: 'Name',
+            title: 'Họ tên',
             dataIndex: 'name',
             key: 'name',
         },
@@ -156,24 +156,7 @@ export default function DemoAntd() {
                 }}
                 dataSource={data}
             />
-            <Table
-                columns={columns}
-                expandable={{
-                    expandedRowRender,
-                    defaultExpandedRowKeys: ['0'],
-                }}
-                dataSource={data}
-                size="middle"
-            />
-            <Table
-                columns={columns}
-                expandable={{
-                    expandedRowRender,
-                    defaultExpandedRowKeys: ['0'],
-                }}
-                dataSource={data}
-                size="small"
-            />
+            
         </div>
     )
 }

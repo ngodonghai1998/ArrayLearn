@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import nhanVienReducer from "./reducers/nhanVienReducer";
 import cartReducer from "./reducers/cartReducer";
+import modelReducer from "./reducers/modelReducer";
 
 
 export const store = configureStore({
@@ -23,6 +24,7 @@ export const store = configureStore({
 
             return state;
         },
+
         // stat = 000xxx
         // nhanVienReducer: (state = { maNhanVien: '001', tenNhanVien: 'Nguyễn Văn A', luongCoBan: '1000' }, action) => {
 
@@ -45,6 +47,7 @@ export const store = configureStore({
         //state = 000xxx
         nhanVienReducer: nhanVienReducer,
         cartReducer: cartReducer,
+        modelReducer: modelReducer,
         
     }
 });
