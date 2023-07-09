@@ -15,6 +15,33 @@
 <!-- js axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js" integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+*** Các bước làm 1 dự án typescipt:
+
+	01 - Khởi tạo dự án typescript bằng lệnh (Guidance below)
+	02 - Xóa các thư mục trong src chỉ chừa lại: index.tsx, .gitignore, package-log.json, package.json, README.md, tsconfig.json.
+	
+	30 - Tạo new file trong thư mục src/Redux đặt tên: configStore.ts
+	31 - Trong configStore.ts, ta import thư viện @reduxjs/toolkit, getState là cái hàm để lấy ra cái reducer.
+	32 - Trong index.ts, thêm thư viện react-redux, import Provider.
+	33 - Trong Home.tsx, bắt đầu tạo giao diện.
+	34 - Trong Product.tsx, ta tạo thẻ card về sản phẩm nào đó, việc tách ra riêng để dễ mainternance.
+	35 - Tạo productReducer.ts trong thư mục redux/Reducer
+	36 - Sử dụng tool Quicktype.io để copy nhanh code.
+	37 - state trong Home.tsx được định nghĩa là RootState, RootState được định nghĩa trong configStore.ts
+	38 - Tạo call api trong Home.tsx, sử dụng useEffect.
+	39 - Tạo action async trong productReducer.ts 
+
+
+
+
+*** Nhớ thêm thư viện history: npm i history
+
+*** Lệnh sử dụng nhanh typescript theo kiểu react functional component: tsrfc
+
+*** Cài thư viện type script trong react như sau: npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+
+*** thư viện trong react cài đặt như sau: npm install axios @reduxjs/toolkit react-redux react-router-dom antd
+
 *** rcredux để tạo nhanh hàm có kết nối sẵn với redux.
 
 	Do redux luôn kết nối qua connect nên ta sẽ bỏ đi export và chỉ dùng mỗi export default để nó luôn mặc định dùng export của redux. 
@@ -72,6 +99,11 @@
  - B02: Nhập câu lệnh sau: npx create-react-app tenDuAn
  - B03: Kiểm tra có thư viện package.json, nếu không có thì hãy chạy: npm install
  - B04: Run: npm run build - để build dự án.
+
+*** Các bước sử dụng typescript cơ bản:
+
+ - B01: Đầu tiên cài đặt trong intergrated terminal của VSCode.
+ - B02: Nhập câu lệnh sau: npx create-react-app my-app --template typescript
 
 *** return trong jsx là một đối tượng: Object
 
