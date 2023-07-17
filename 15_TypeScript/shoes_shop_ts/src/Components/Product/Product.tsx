@@ -1,15 +1,18 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { ProductModel } from '../../Redux/reducers/productReducer'
 
-type Props = {}
+type Props = {
+	product: ProductModel;
+}
 
-export default function Product({ }: Props) {
+export default function Product({ product }: Props) {
 	return (
 		<div className='card'>
-			<img src='https://i.pravatar.cc?u=1' alt='...' />
+			<img src={product.image} alt='...' />
 			<div className='card-body'>
-				<h3>Product name</h3>
-				<p>Price</p>
+				<h5>{product.name}</h5>
+				<p>{product.price}</p>
 				<NavLink to={`/detail/${1}`} className='btn btn-dark'>
 					View detail
 				</NavLink>

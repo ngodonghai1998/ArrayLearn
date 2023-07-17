@@ -45,7 +45,7 @@ export default productReducer.reducer
 
 export type AsyncActionApi = (...rest:any) => (dispatch:DispatchType) => void
 
-export const  getDataProductApi:AsyncActionApi = () => {
+export const  getDataProductApi = () => {
     return async (dispatch: DispatchType) => {
         const res = await axios({
             url:'https://shop.cyberlearn.vn/api/Product',

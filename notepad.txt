@@ -30,6 +30,9 @@
 	37 - state trong Home.tsx được định nghĩa là RootState, RootState được định nghĩa trong configStore.ts
 	38 - Tạo call api trong Home.tsx, sử dụng useEffect.
 	39 - Tạo action async trong productReducer.ts 
+	40 - Tạo config.ts để setup hằng số.
+	41 - Trong config.ts, strResult được định nghĩa là any do localStorage có thể parse ra dữ liệu là một Object theo format nào đó. Ví dụ theo format là product model hay format là user login.
+	42 - Trong config.ts, khi định nghĩa xong cho store thì định nghĩa đến interceptor.
 
 
 
